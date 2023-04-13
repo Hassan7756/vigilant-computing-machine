@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Application Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            let pages = document.getElementsByClassName("page");
+            for (let i = 0; i < pages.length; i++) {
+                pages[i].classList.remove("active");
+            }
+            document.getElementById(pageId).classList.add("active");
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('cookies')">Cookies</a>
+    </nav>
+
+    <div id="home" class="page active">
+        <h1>Home</h1>
+        <p>This is the home page.</p>
+    </div>
+
+    <div id="about" class="page">
+        <h1>About</h1>
+        <p>This is the about page.</p>
+    </div>
+
+    <div id="cookies" class="page">
+        <h1>Cookies</h1>
+        <p>This is the cookies page.</p>
+    </div>
+</body>
+</html>
